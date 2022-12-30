@@ -18,10 +18,12 @@ def text_extract(file) -> list:
 
 user_selection_percent = st.slider(label = "What size would you like the document reduced to ?") #reword this
 #def summarization_percentage(user_selection_percent):
-def summmarizer(pipe, text extract) -> list:
-    pass
+def summmarizer(pipe, text_extract) -> list:
+    for text in text_extract:
+       st.write(pipe(text))
+    return pipe(text)
 
 
-
+summmarizer(pipe, text_extract)
 
 
